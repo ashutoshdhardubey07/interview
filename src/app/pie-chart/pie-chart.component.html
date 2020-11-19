@@ -1,0 +1,14 @@
+<div class="pie-chart">
+  <button class="arrow" [routerLink]="['/user']">Go Back</button>
+
+  <ngx-charts-pie-chart
+  [view]="view_pie"
+  [scheme]="colorScheme"
+  [results]="single"
+  [gradient]="gradient"
+  [legend]="showLegend"
+  [labels]="showLabels"
+  [doughnut]="isDoughnut">
+  </ngx-charts-pie-chart>
+</div>
+

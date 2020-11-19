@@ -1,0 +1,44 @@
+.pie-chart {
+  border: 1px solid #dee2e6;
+  height: 301px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.chart-legend .legend-wrap {
+  width: 90px !important;
+}
+.arrow {
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+  line-height: 2.5em;
+  padding-left: 1em;
+  padding-right: 2em;
+  background: #95a5a6;
+  color: black;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 17px;
+   &:after {
+    // triangle hover color
+    border-right: 20px solid #95a5a6;
+    top: 0;
+  }
+}
+
+.arrow:after {
+  // the triangle
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 0px;
+  width: 0px;
+  margin-right: -20px;
+  left: -20px;
+}
