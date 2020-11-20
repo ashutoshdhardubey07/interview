@@ -1,6 +1,7 @@
 import { DetailServiceService } from './../detail/detail-service.service';
 import { Component, OnInit } from '@angular/core';
 import { single } from './data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pie-chart',
@@ -22,7 +23,8 @@ export class PieChartComponent implements OnInit {
     domain: ['#ff0537ba', '#007bff']
   };
   myGraphData: any = [];
-  constructor(public server: DetailServiceService) {
+  api: any;
+  constructor(public server: DetailServiceService,public router:Router) {
     this.myGraphData = Object.assign(this, { single })
    }
 
@@ -31,7 +33,7 @@ export class PieChartComponent implements OnInit {
 
   }
   getData() {
-    this.server.getApi('todos').subscribe((res) => {
+  this.api =   this.server.getApi('todos').subscribe((res) => {
       this.data = res
       this.data.forEach(element => {
         if(element.completed){
@@ -52,5 +54,9 @@ export class PieChartComponent implements OnInit {
         }
       });
     })
+  }
+  goto(route) {
+    this.api.unsubscribe()
+    this.router.navigate([route])
   }
 }

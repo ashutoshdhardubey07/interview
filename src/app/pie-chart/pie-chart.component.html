@@ -1,5 +1,5 @@
 <div class="pie-chart">
-  <button class="arrow" [routerLink]="['/user']">Go Back</button>
+  <button class="arrow" (click)="goto('user')">Go Back</button>
 
   <ngx-charts-pie-chart
   [view]="view_pie"
