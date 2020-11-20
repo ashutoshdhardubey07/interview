@@ -9,7 +9,6 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from  '@angular/common/http'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpCancelService } from './detail/httpcancel.service';
-import { ManageHttpInterceptor } from './detail/managehttp.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { ManageHttpInterceptor } from './detail/managehttp.interceptor';
   ],
   providers: [
     HttpCancelService,
-    { provide: HTTP_INTERCEPTORS, useClass: ManageHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
