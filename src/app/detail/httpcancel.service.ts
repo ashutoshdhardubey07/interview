@@ -18,8 +18,4 @@ export class HttpCancelService {
     this.pendingHTTPRequests$.next();
   }
 
-  public onCancelPendingRequests() {
-    return this.pendingHTTPRequests$.asObservable();
-  }
-
 }
